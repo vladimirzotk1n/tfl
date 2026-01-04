@@ -53,7 +53,10 @@ object Main {
     )
 
     val AFA2: Map[Int, List[(Int, String)]] = Map(
-        1 -> List((1, "a"), (1, "b"))
+        1 -> List((1, "a"), (2, "b")),
+        2 -> List((3, "a"), (2, "b")),
+        3 -> List((4, "a")),
+        4 -> List((2, "b"))
     )
 
     def word_in_automata(word: String,
@@ -148,7 +151,7 @@ object Main {
         val dfa_finals = Set(3, 4, 9, 11, 12, 13, 15)
         val nfa_finals = Set(5)
         val afa1_finals = Set(3, 4, 9, 11, 12, 13, 15)
-        val afa2_finals = Set(1)
+        val afa2_finals = Set(1, 2)
 
         // Полный рандом
         for (_ <- 0 until num_iters) {
