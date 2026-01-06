@@ -1,0 +1,45 @@
+digraph PDA {
+    rankdir=LR;
+    size="10,8";
+
+    node [shape = circle];
+    1; 2; 3; 4; 5; 5; 7;
+
+    7 [shape=doublecircle];
+
+
+    start [shape=none, label=""];
+    start -> 1;
+
+
+    1 -> 1 [label="a, x/Ax", loopdir=left, labelangle=120];
+    1 -> 1 [label="b, x/Bx", loopdir=right, labelangle=-120];
+    1 -> 2 [label="c"];
+
+    2 -> 2 [label="c"];
+    2 -> 3 [label="a, A/ε"];
+    2 -> 3 [label="b, B/ε"];
+    2 -> 7 [label="ε, z₀/z₀"];
+    
+    
+    3 -> 3 [label="a, A/ε", loopdir=left, labelangle=120];
+    3 -> 3 [label="b, B/ε", loopdir=right, labelangle=-120];
+    
+    3 -> 4 [label="c, A/ε"];
+    3 -> 5 [label="c, B/ε"];
+    
+
+    4 -> 4 [label="c, A/ε"];
+    4 -> 7 [label="ε, z₀/z₀"];
+    
+    
+    5 -> 5 [label="c, B/ε"];
+    5 -> 6 [label="c, A/ε"];
+    5 -> 7 [label="ε, z₀/z₀"];
+    
+    
+    6 -> 6 [label="c, A/ε"];
+    6 -> 7 [label="ε, z₀/z₀"];
+
+}
+
